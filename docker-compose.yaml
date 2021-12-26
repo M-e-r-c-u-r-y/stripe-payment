@@ -1,0 +1,11 @@
+version: "2.3"
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: stripe_payment_api
+    ports:
+      - 8000:8000
+    environment:
+      - STRIPE_KEY=SET_TEST_KEY_HERE # Normally image is built and uploaded to Amazon ECR, use gh actions to build and gh secrets to get this value
